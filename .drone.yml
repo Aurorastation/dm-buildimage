@@ -13,6 +13,7 @@ trigger:
 steps:
   - name: build and push dm-buildimage
     image: plugins/docker
+    priviledged: true
     settings:
       repo: aurorastation/dm-buildimage
       username:
