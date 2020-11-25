@@ -3,6 +3,9 @@ kind: pipeline
 type: docker
 name: default
 
+node:
+  k: y
+
 clone:
   depth: 10
 
@@ -13,6 +16,7 @@ trigger:
 steps:
   - name: build and push dm-buildimage
     image: plugins/docker
+    privileged: true
     settings:
       repo: aurorastation/dm-buildimage
       username:
@@ -21,10 +25,15 @@ steps:
         from_secret: docker_password
       build_args:
         - BYOND_VERSION=513.1536
+        - SPACEMANDMM_VERSION=suite-1.6
+        - RUSTG_VERSION=0.4.2+a2
+        - FLYWAY_VERSION=5.2.4
+
       tags: latest
+      purge: false
 
 ---
 kind: signature
-hmac: b12b76fca7a07f800468d4ea14c73e4e979e140744b1b8e013237a021df6b697
+hmac: 25bf0a1d79308cd6449714e544dc0f4d48356393329db2a727494db81a1e22b1
 
 ...
