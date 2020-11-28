@@ -15,7 +15,7 @@ RUN export BYOND_MAJOR=$(echo $BYOND_VERSION | cut -d'.' -f1) \
     unzip \
     make \
     libstdc++6 \
-    && curl "http://www.byond.com/download/build/${BYOND_MAJOR}/${BYOND_MAJOR}.${BYOND_MINOR}_byond_linux.zip" -o byond.zip \
+    && curl -L "http://www.byond.com/download/build/${BYOND_MAJOR}/${BYOND_MAJOR}.${BYOND_MINOR}_byond_linux.zip" -o byond.zip \
     && unzip byond.zip \
     && cd byond \
     && sed -i 's|install:|&\n\tmkdir -p $(MAN_DIR)/man6|' Makefile \
@@ -27,7 +27,7 @@ RUN export BYOND_MAJOR=$(echo $BYOND_VERSION | cut -d'.' -f1) \
     #&& rm flyway.tar.gz \
     #&& mv "${HOME}/flyway-${FLYWAY_VERSION}" "${HOME}/flyway" \
     #&& chmod +x "${HOME}/flyway/flyway" \
-    && curl "https://github.com/SpaceManiac/SpacemanDMM/releases/download/${SPACEMANDMM_VERSION}/dreamchecker" -o ~/dreamchecker \
+    && curl -L "https://github.com/SpaceManiac/SpacemanDMM/releases/download/${SPACEMANDMM_VERSION}/dreamchecker" -o ~/dreamchecker \
     && chmod +x ~/dreamchecker \
     && mkdir -p $HOME/.byond/bin \
     && curl -L "https://github.com/Aurorastation/rust-g/releases/download/${RUSTG_VERSION}/librust_g.so" -o $HOME/.byond/bin/librust_g.so \
