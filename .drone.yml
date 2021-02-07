@@ -24,7 +24,7 @@ steps:
       password:
         from_secret: docker_password
       build_args:
-        - BYOND_VERSION=513.1536
+        - BYOND_VERSION=513.1542
         - SPACEMANDMM_VERSION=suite-1.6
         - RUSTG_VERSION=0.4.2+a2
         - FLYWAY_VERSION=5.2.4
@@ -34,6 +34,6 @@ steps:
 
 ---
 kind: signature
-hmac: 25bf0a1d79308cd6449714e544dc0f4d48356393329db2a727494db81a1e22b1
+hmac: 5d67f5142b201af0e7ea571504be02d6ad9123ae18228da15de9ca08cc009931
 
 ...
