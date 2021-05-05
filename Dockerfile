@@ -1,4 +1,4 @@
-FROM i386/ubuntu:focal
+FROM i386/ubuntu:focal.
 
 ARG BYOND_VERSION
 ARG SPACEMANDMM_VERSION
@@ -33,4 +33,3 @@ RUN export BYOND_MAJOR=$(echo $BYOND_VERSION | cut -d'.' -f1) \
     && apt-get purge -y --auto-remove unzip make \
     && cd .. \
     && rm -rf byond byond.zip /var/lib/apt/lists/*
-
