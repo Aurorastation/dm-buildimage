@@ -12,6 +12,8 @@ clone:
 trigger:
   branch:
   - master #avoid double builds on PRs
+  event:
+  - push
 
 steps:
   - name: build and push dm-buildimage
