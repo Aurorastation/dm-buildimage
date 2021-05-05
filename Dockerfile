@@ -1,4 +1,4 @@
-FROM i386/ubuntu:focal.
+FROM i386/ubuntu:focal
 
 ARG BYOND_VERSION
 ARG SPACEMANDMM_VERSION
