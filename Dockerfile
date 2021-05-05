@@ -1,4 +1,4 @@
-FROM amd64/ubuntu:focal
+FROM amd64/ubuntu:bionic
 
 ARG BYOND_VERSION
 ARG SPACEMANDMM_VERSION
