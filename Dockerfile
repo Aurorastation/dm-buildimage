@@ -1,4 +1,4 @@
-FROM FROM amd64/ubuntu:bionic
+FROM amd64/ubuntu:bionic
 
 ARG BYOND_VERSION
 ARG SPACEMANDMM_VERSION
