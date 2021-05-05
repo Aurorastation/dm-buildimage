@@ -11,6 +11,7 @@ RUN export BYOND_MAJOR=$(echo $BYOND_VERSION | cut -d'.' -f1) \
     && echo "Installing BYOND ${BYOND_VERSION}, SPACEMANDMM ${SPACEMANDMM_VERSION}, RUSTG ${RUSTG_VERSION}, FLYWAY ${FLYWAY_VERSION}" \
     && dpkg --add-architecture i386 \
     && apt-get update \
+    && apt-get upgrade \
     && apt-get install -y curl unzip make libstdc++6:i386 gcc-multilib:i386 g++-7:i386 g++-7-multilib:i386 libssl1.1:i386 zlib1g-dev:i386 libssl-dev:i386 pkg-config:i386 \
     && curl -L "http://www.byond.com/download/build/${BYOND_MAJOR}/${BYOND_MAJOR}.${BYOND_MINOR}_byond_linux.zip" -o byond.zip \
     && unzip byond.zip \
