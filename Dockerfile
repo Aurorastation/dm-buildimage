@@ -5,7 +5,7 @@ ARG SPACEMANDMM_VERSION
 ARG RUSTG_VERSION
 ARG FLYWAY_VERSION
 
-# Install byond
+# Install byond 
 RUN export BYOND_MAJOR=$(echo $BYOND_VERSION | cut -d'.' -f1) \
     && export BYOND_MINOR=$(echo $BYOND_VERSION | cut -d'.' -f2) \
     && echo "Installing BYOND ${BYOND_VERSION}, SPACEMANDMM ${SPACEMANDMM_VERSION}, RUSTG ${RUSTG_VERSION}, FLYWAY ${FLYWAY_VERSION}" \
