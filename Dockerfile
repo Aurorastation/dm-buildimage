@@ -10,7 +10,7 @@ RUN export BYOND_MAJOR=$(echo $BYOND_VERSION | cut -d'.' -f1) \
     && export BYOND_MINOR=$(echo $BYOND_VERSION | cut -d'.' -f2) \
     && echo "Installing BYOND ${BYOND_VERSION}, SPACEMANDMM ${SPACEMANDMM_VERSION}, RUSTG ${RUSTG_VERSION}, FLYWAY ${FLYWAY_VERSION}" \
     && apt-get update \
-    && apt-get install -y curl unzip make libstdc++6 \
+    && apt-get install -y curl unzip make libstdc++6 gcc-multilib g++-7 g++-7-multilib libssl1.1 zlib1g \
     && curl -L "http://www.byond.com/download/build/${BYOND_MAJOR}/${BYOND_MAJOR}.${BYOND_MINOR}_byond_linux.zip" -o byond.zip \
     && unzip byond.zip \
     && rm byond.zip \
