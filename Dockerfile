@@ -1,4 +1,4 @@
-FROM i386/ubuntu:bionic
+FROM amd64/ubuntu:hirsute
 
 ARG BYOND_VERSION
 ARG SPACEMANDMM_VERSION
@@ -9,8 +9,9 @@ ARG FLYWAY_VERSION
 RUN export BYOND_MAJOR=$(echo $BYOND_VERSION | cut -d'.' -f1) \
     && export BYOND_MINOR=$(echo $BYOND_VERSION | cut -d'.' -f2) \
     && echo "Installing BYOND ${BYOND_VERSION}, SPACEMANDMM ${SPACEMANDMM_VERSION}, RUSTG ${RUSTG_VERSION}, FLYWAY ${FLYWAY_VERSION}" \
+    && dpkg --add-architecture i386 \
     && apt-get update \
-    && apt-get install -y curl unzip make libstdc++6 gcc-multilib g++-7 g++-7-multilib libssl1.1 zlib1g \
+    && apt-get install -y curl unzip make libstdc++6:i386 gcc-multilib:i386 g++-7:i386 g++-7-multilib:i386 libssl1.1:i386 zlib1g-dev:i386 \
     && curl -L "http://www.byond.com/download/build/${BYOND_MAJOR}/${BYOND_MAJOR}.${BYOND_MINOR}_byond_linux.zip" -o byond.zip \
     && unzip byond.zip \
     && rm byond.zip \
